@@ -45,6 +45,12 @@ public class Order {
         return customer;
     }
 
+    public double getTotalAmount() {
+        return products.stream()
+                .mapToDouble(Product::getPrice)
+                .sum();
+    }
+
     @Override
     public String toString() {
         return "Order{" +

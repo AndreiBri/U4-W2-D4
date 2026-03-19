@@ -38,5 +38,25 @@ public class Application {
             System.out.println("\n");
 
         }
+
+        System.out.println("=== ESERCIZIO 2 ===\n");
+        System.out.println(" Totale speso da ogni cliente\n");
+
+
+        for (Customer cliente : ordiniPerCliente.keySet()) {
+            List<Order> ordini = ordiniPerCliente.get(cliente);
+
+            double totale = 0;
+
+            for (Order ordine : ordini) {
+                for (Product p : ordine.getProducts()) {
+                    totale += p.getPrice();
+                }
+            }
+
+            System.out.println(" Ordini: " + ordini.size());
+            System.out.println(cliente.getName() + ": " + totale + " €");
+            System.out.println();
+        }
     }
 }
