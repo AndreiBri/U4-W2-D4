@@ -1,14 +1,17 @@
 package AndreiB;
 
+import data.SampleData;
 import entities.Customer;
 import entities.Order;
 import entities.Product;
 
 import java.util.List;
 import java.util.Map;
+import java.util.OptionalDouble;
 
 import static helpersStream.es1.raggruppaOrdiniPerCliente;
 import static helpersStream.es3.getProdottiPiuCostosi;
+import static helpersStream.es4.calcolaMediaImportoOrdini;
 
 public class Application {
 
@@ -68,5 +71,30 @@ public class Application {
         for (Product p : top) {
             System.out.println("Prodotto: " + p.getName() + ", Prezzo: " + p.getPrice() + ", Categoria: " + p.getCategory());
         }
+
+        System.out.println("\n=== ESERCIZIO 4 ===\n");
+        System.out.println("Media degli importi degli ordini:\n");
+
+        OptionalDouble media = calcolaMediaImportoOrdini();
+
+
+        // Come abbiamo fatto in classe
+        if (media.isPresent()) {
+
+            System.out.println("Importo medio per ordine: " + media.getAsDouble() + " €");
+            System.out.println("Numero ordini considerati: " + SampleData.ORDERS.size());
+            System.out.println();
+
+        } else System.out.println("Non ci sono ordini media = 0.00 €");
+
+        // Ho messo un'altro metodo in caso mi fossi dimenticato di isPeresent()
+
+//        if (SampleData.ORDERS.isEmpty()) {
+//            System.out.println("Non ci sono ordini media = 0.00 €");
+//        } else {
+//            System.out.println("Importo medio per ordine: " + media.getAsDouble() + " €");
+//            System.out.println("Numero ordini considerati: " + SampleData.ORDERS.size());
+//            System.out.println();
+//        }
     }
 }
