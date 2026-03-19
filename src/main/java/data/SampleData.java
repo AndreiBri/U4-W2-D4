@@ -19,9 +19,9 @@ public class SampleData {
         Product p1 = new Product(1L, "Libro Java", "Books", 150.0);
         Product p2 = new Product(2L, "Libro Python", "Books", 80.0);
         Product p3 = new Product(3L, "Giocattolo Baby", "Baby", 30.0);
-        Product p4 = new Product(4L, "Maglietta Boys", "Boys", 45.0);
+        Product p4 = new Product(4L, "Maglietta Boys", "Boys", 245.0);
         Product p5 = new Product(5L, "Libro SQL", "Books", 120.0);
-        Product p6 = new Product(6L, "Peluche Baby", "Baby", 20.0);
+        Product p6 = new Product(6L, "Peluche Baby", "Baby", 200.0);
         Product p7 = new Product(7L, "Pantaloni Boys", "Boys", 55.0);
 
         PRODUCTS.addAll(List.of(p1, p2, p3, p4, p5, p6, p7));

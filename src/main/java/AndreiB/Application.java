@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Map;
 
 import static helpersStream.es1.raggruppaOrdiniPerCliente;
+import static helpersStream.es3.getProdottiPiuCostosi;
 
 public class Application {
 
@@ -56,7 +57,16 @@ public class Application {
 
             System.out.println(" Ordini: " + ordini.size());
             System.out.println(cliente.getName() + ": " + totale + " €");
-            System.out.println();
+            System.out.println("\n");
+        }
+
+        System.out.println("\n=== ESERCIZIO 3 ===\n");
+        System.out.println("I " + 3 + " prodotti più costosi:\n");
+
+        List<Product> top = getProdottiPiuCostosi(4);
+
+        for (Product p : top) {
+            System.out.println("Prodotto: " + p.getName() + ", Prezzo: " + p.getPrice() + ", Categoria: " + p.getCategory());
         }
     }
 }
