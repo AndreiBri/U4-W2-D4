@@ -12,6 +12,7 @@ import java.util.OptionalDouble;
 import static helpersStream.es1.raggruppaOrdiniPerCliente;
 import static helpersStream.es3.getProdottiPiuCostosi;
 import static helpersStream.es4.calcolaMediaImportoOrdini;
+import static helpersStream.es5.sommaPrezziPerCategoria;
 
 public class Application {
 
@@ -87,14 +88,26 @@ public class Application {
 
         } else System.out.println("Non ci sono ordini media = 0.00 €");
 
-        // Ho messo un'altro metodo in caso mi fossi dimenticato di isPeresent()
+        // Ho messo un altro metodo in caso mi fossi dimenticato di isPeresent()
 
-//        if (SampleData.ORDERS.isEmpty()) {
-//            System.out.println("Non ci sono ordini media = 0.00 €");
-//        } else {
-//            System.out.println("Importo medio per ordine: " + media.getAsDouble() + " €");
-//            System.out.println("Numero ordini considerati: " + SampleData.ORDERS.size());
-//            System.out.println();
-//        }
+        //  if (SampleData.ORDERS.isEmpty()) {
+        //            System.out.println("Non ci sono ordini media = 0.00 €");
+        //        } else {
+        //            System.out.println("Importo medio per ordine: "+ media.getAsDouble() + " €");
+        //            System.out.println("Numero ordini considerati: "+ SampleData.ORDERS.size());
+        //            System.out.println();
+        //  }
+
+        System.out.println("\n=== ESERCIZIO 5 ===\n");
+        System.out.println("Somma importi per categoria:\n");
+
+        Map<String, Double> sommaPerCategoria = sommaPrezziPerCategoria();
+
+        for (String categoria : sommaPerCategoria.keySet()) {
+            double totale = sommaPerCategoria.get(categoria);
+
+            System.out.println("Categoria: " + categoria + ". Totale: " + totale + " €");
+        }
+        System.out.println();
     }
 }
